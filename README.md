@@ -2,6 +2,10 @@
 
 This is a web application that allows users to track the price of a specific Amazon product and receive email alerts when the price drops below their target price.  
 
+###
+![ScreenShot Tool -20250214232711](https://github.com/user-attachments/assets/958355c0-f556-4a1f-b028-e7172ab2d118)
+###
+
 ## Features  
 - Scrapes the product's title and current price from Amazon.  
 - Stores user details (name, email, phone, target price) in a MongoDB database.  
