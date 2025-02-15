@@ -25,7 +25,10 @@ Before running the project, ensure you have the following installed:
 - Python 3  
 - MongoDB  
 - `pip` (Python package manager)  
-- A **ScraperAPI** account ([Get API Key](https://www.scraperapi.com/))  
+- A **ScraperAPI** account ([Get API Key](https://www.scraperapi.com/))
+###
+![ScreenShot Tool -20250214235127](https://github.com/user-attachments/assets/fdaf5265-4d80-4662-9cd6-a7fbe4bf7a09)
+###
 - A **Gmail account** with **less secure apps enabled** (or an App Password)  
 
 ## Installation & Setup  
