@@ -73,8 +73,17 @@ The app will run on **http://127.0.0.1:8080/**.
 
 ## How It Works  
 1. Users enter their **name, phone, email, and target price** for the Amazon product.  
+###
+![ScreenShot Tool -20250214235854](https://github.com/user-attachments/assets/c2b3e3f6-8086-4807-afa8-cd50430f0372)
+###
 2. The app scrapes the **product title and current price**.  
-3. The user details are stored in **MongoDB**.  
+###
+![resetImage](https://github.com/user-attachments/assets/84490cd6-5418-4eeb-bc76-3625f28ccdce)
+###
+3. The user details are stored in **MongoDB**.
+###
+
+###
 4. A background thread **checks the price periodically**.  
 5. If the price **drops below the target**, an **email notification** is sent.  
 
