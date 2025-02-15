@@ -35,7 +35,7 @@ Before running the project, ensure you have the following installed:
 
 ### Clone the Repository  
 ```bash
-git clone https://github.com/your-username/amazon-price-tracker.git
+git clone https://github.com/r0han01/amazon-price-tracker-webscraping-bs4.git
 cd amazon-price-tracker
 ```
 
