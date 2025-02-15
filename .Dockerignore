@@ -1,0 +1,30 @@
+# Exclude Python bytecode files
+__pycache__
+*.pyc
+*.pyo
+
+# Exclude virtual environment directory
+venv/
+env/
+.venv/
+
+# Exclude .env file containing sensitive information
+.env
+
+# Exclude Git files
+.git
+.gitignore
+
+# Exclude Dockerfile itself (optional, if you don't need it in the container)
+Dockerfile
+
+# Exclude build files (if any)
+build/
+dist/
+*.egg-info/
+
+# Exclude any IDE or editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project

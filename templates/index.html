@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Price Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Amazon Smile Logo */
+        .amazon-logo {
+            width: 300px;
+            display: block;
+            margin: -5.5px auto -20px; /* Centering with spacing */
+            margin-top: -40px;
+        }
+
+        /* Exclude the main title from capitalization */
+        h3 {
+            text-transform: uppercase !important;
+        }
+
+        /* Background with a dark gradient overlay */
+        body {
+            background: url('https://i.gzn.jp/img/2023/09/13/iphone-price-history/00.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-card {
+            width: 60%;
+        }
+
+        .image-card {
+            width: 35%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #00eaff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        /* Input Fields */
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            outline: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            text-transform: none;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: bold;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        label {
+            position: absolute;
+            top: 14px;
+            left: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 10px;
+            font-size: 0.8em;
+            color: #00eaff;
+        }
+
+        /* Submit Button */
+        input[type="submit"] {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            width: 100%;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.6);
+        }
+
+        /* Success message */
+        .message {
+            background-color: rgba(40, 167, 69, 0.8);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        /* Grid layout for name & phone fields */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .disclaimer {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Card -->
+        <div class="form-card">
+            <h3>Price Tracker for Amazon Product</h3>
+
+            <!-- Amazon Smile Logo -->
+            <img src="https://www.pngall.com/wp-content/uploads/15/Amazon-Smile-Logo-PNG-Photos.png" alt="Amazon Smile Logo" class="amazon-logo">
+
+            <p><strong>Product Title:</strong> <span style="text-transform: none;">iPhone 16 Pro Max / 256GB / Black Titanium - MYW33LL/A (Sim Free)</span></p>
+            <p><strong>Current Live 🔴 Price On Amazon:</strong> ${{ current_price }}</p>
+
+            <p>
+                <a href="https://www.amazon.com/iPhone-Pro-256GB-Black-Titanium/dp/B0DHT1DDXR/ref=sr_1_4?sr=8-4" target="_blank">
+                    🔗 Amazon Product Link
+                </a>
+            </p>
+
+            <form action="/" method="POST">
+                <div class="grid">
+                    <div class="input-container">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name"><strong>your name</strong></label>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="tel" id="phone" name="phone" required placeholder=" ">
+                        <label for="phone"><strong>phone number</strong></label>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <input type="number" id="target_price" name="target_price" step="0.01" required placeholder=" ">
+                    <label for="target_price"><strong>target price</strong></label>
+                </div>
+
+                <div class="input-container">
+                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <label for="email"><strong>your email</strong></label>
+                </div>
+
+                <input type="submit" value="📩 Send Email When Hits My Target">
+            </form>
+
+            {% if message %}
+                <div class="message">
+                    <p>{{ message }}</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Product Image Card -->
+        <div class="image-card">
+            <img src="https://www.nuevo.tech/cdn/shop/files/iPhone_16_Pro_Black_Titanium_Hero_Vertical_Screen__WWEN.png?v=1725958351" alt="iPhone 16 Pro Max" class="product-image">
+
+            <!-- Disclaimer Text -->
+            <p class="disclaimer">
+                This image is subject to change as it is directly imported from Amazon using API.<br>
+                This app is not responsible for the product image, which is retrieved using web scraping techniques.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
