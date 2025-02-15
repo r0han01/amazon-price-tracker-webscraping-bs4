@@ -76,19 +76,25 @@ The app will run on **http://127.0.0.1:8080/**.
 ###
 ![ScreenShot Tool -20250214235854](https://github.com/user-attachments/assets/c2b3e3f6-8086-4807-afa8-cd50430f0372)
 ###
+![ScreenShot Tool -20250215000752](https://github.com/user-attachments/assets/30e416fc-df89-4f0d-b694-00600d17c22c)
+###
 2. The app scrapes the **product title and current price**.  
 ###
 ![resetImage](https://github.com/user-attachments/assets/84490cd6-5418-4eeb-bc76-3625f28ccdce)
 ###
 3. The user details are stored in **MongoDB**.
 ###
-
+![Screenshot from 2025-02-15 00-10-35](https://github.com/user-attachments/assets/87d3184d-2f68-47a3-8bd2-06052f9f6351)
 ###
 4. A background thread **checks the price periodically**.  
-5. If the price **drops below the target**, an **email notification** is sent.  
+5. If the price **drops below the target**, an **email notification** is sent.
+###
+![ScreenShot Tool -20250215001126](https://github.com/user-attachments/assets/7b3b50a5-2788-45e6-88f8-fdedf6ea148e)
+###
 
 ## Security Notes  
-- **Do not use your main Gmail password.** Use an **App Password** instead.  
+- **Do not use your main Gmail password.** Use an **App Password** instead.
+  Please refer to my another repo in order to know more details about & how to create app password using gmail here is the link - https://github.com/r0han01/PHPMailer-Gmail-SMTP-Integration?tab=readme-ov-file#2-setting-up-gmail-app-password
 - **Use a proxy service like ScraperAPI** to avoid IP bans while scraping.  
 
 ## Future Improvements  
